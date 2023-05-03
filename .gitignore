@@ -1,0 +1,7 @@
+# python
+__pycache__/
+.venv/
+.venvw/
+*.log
+*.sqlite3
+work_*/
