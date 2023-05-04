@@ -50,3 +50,12 @@ async def get_ui(request: Request):
     with open('miniui/templates/miniui.html') as fi:
         html_content = fi.read()
     return HTMLResponse(content=html_content, status_code=200)
+
+if __name__ == '__main__':
+    import argparse
+    import uvicorn
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-p', '--port', default=9000, type=int, help='fastapi server port')
+    args = parser.parse_args()
+
+    uvicorn.run('main:app', reload=True, host='0.0.0.0', port=args.port)
